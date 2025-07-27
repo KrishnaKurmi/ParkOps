@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ride Management</title>
+    <style>
+        h2 {
+            text-align: center;
+            margin-bottom: 5%;
+            padding: 10px;
+        }
+
+        .container {
+            width: 400px;
+            margin: 100px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+
+        }
+
+        .form-group label {
+            width: 150px;
+            margin-right: 10px;
+            font-weight: bold;
+
+        }
+
+        .form-group input,
+        .form-group textarea
+         {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid grey;
+            border-radius: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+
+        }
+
+        input[type="submit"] {
+            background-color: teal;
+            border: 0cap;
+        }
+
+        input[type="submit"]:hover {
+            background-color: lime;
+            cursor: pointer;
+            border: 0cap;
+            box-shadow: 0px 0px 20px rgba(0, 255, 0, 0.6);
+        }
+
+        .rating {
+            display: flex;
+            flex-direction:row-reverse;
+            justify-content:flex-end;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label {
+            font-size: 50px;
+            color: lightgray;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .rating label:hover,
+        .rating label:hover~label {
+            color: orange;
+        }
+
+        .rating input:checked~label {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <form method="post" action="/submit">
+        <h2>Ride Feedback</h2>
+        <div class="form-group rating">
+            <input type="radio" id="s5" name="rating" value="5" /><label for="s5"
+                                                                         title="5 stars">&#9733;</label>
+            <input type="radio" id="s4" name="rating" value="4" /><label for="s4"
+                                                                         title="4 stars">&#9733;</label>
+            <input type="radio" id="s3" name="rating" value="3" /><label for="s3"
+                                                                         title="3 stars">&#9733;</label>
+            <input type="radio" id="s2" name="rating" value="2" /><label for="s2"
+                                                                         title="2 stars">&#9733;</label>
+            <input type="radio" id="s1" name="rating" value="1" /><label for="s1"
+                                                                         title="1 star">&#9733;</label>
+        </div>
+        <div class="form-group comment">
+            <textarea name="comment" id="comment" placeholder="We'll love to know your genuine feedback"></textarea>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="✔ Submit" id="gender" name="gender">
+        </div>
+    </form>
+</div>
+</body>
+
+</html>
