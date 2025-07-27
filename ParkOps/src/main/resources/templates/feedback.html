@@ -51,6 +51,7 @@
         input[type="submit"] {
             background-color: teal;
             border: 0cap;
+            transition: ease-in-out 0.2s;
         }
 
         input[type="submit"]:hover {
@@ -72,47 +73,53 @@
 
         .rating label {
             font-size: 50px;
-            color: lightgray;
+            /* color: lightgray; */
+            filter: grayscale(75%);
+            opacity: 0.6;
             cursor: pointer;
-            transition: color 0.2s;
+            transition: filter 0.3s, ease-in-out 0.2s;
         }
 
         .rating label:hover,
         .rating label:hover~label {
-            color: orange;
+            box-shadow: orange 20px;
+            opacity: 1;
+            filter: grayscale(0%);
+            transform: scale(1.05);
         }
 
         .rating input:checked~label {
-            color: orange;
+            opacity: 1;
+            filter: grayscale(0%);
         }
     </style>
 </head>
 
 <body>
-<div class="container">
-    <form method="post" action="/submit">
-        <h2>Ride Feedback</h2>
-        <div class="form-group rating">
-            <input type="radio" id="s5" name="rating" value="5" /><label for="s5"
-                                                                         title="5 stars">&#9733;</label>
-            <input type="radio" id="s4" name="rating" value="4" /><label for="s4"
-                                                                         title="4 stars">&#9733;</label>
-            <input type="radio" id="s3" name="rating" value="3" /><label for="s3"
-                                                                         title="3 stars">&#9733;</label>
-            <input type="radio" id="s2" name="rating" value="2" /><label for="s2"
-                                                                         title="2 stars">&#9733;</label>
-            <input type="radio" id="s1" name="rating" value="1" /><label for="s1"
-                                                                         title="1 star">&#9733;</label>
-        </div>
-        <div class="form-group comment">
-            <textarea name="comment" id="comment" placeholder="We'll love to know your genuine feedback"></textarea>
-        </div>
+    <div class="container">
+        <form method="post" action="/reportsaved">
+            <h2>Ride Feedback</h2>
+            <div class="form-group rating">
+                    <input type="radio" id="s5" name="rating" value="5" /><label for="s5"
+                        title="Excellent">😍</label>
+                    <input type="radio" id="s4" name="rating" value="4" /><label for="s4"
+                        title="Good">😃</label>
+                    <input type="radio" id="s3" name="rating" value="3" /><label for="s3"
+                        title="Okay">🙂</label>
+                    <input type="radio" id="s2" name="rating" value="2" /><label for="s2"
+                        title="Bad">😕</label>
+                    <input type="radio" id="s1" name="rating" value="1" /><label for="s1"
+                        title="Terrible">😠</label>
+            </div>
+            <div class="form-group comment">
+                <textarea name="comment" id="comment" placeholder="We'll love to know your genuine feedback"></textarea>
+            </div>
 
-        <div class="form-group">
-            <input type="submit" value="✔ Submit" id="gender" name="gender">
-        </div>
-    </form>
-</div>
+            <div class="form-group">
+                <input type="submit" value="✔ Submit" id="gender" name="gender">
+            </div>
+        </form>
+    </div>
 </body>
 
 </html>
