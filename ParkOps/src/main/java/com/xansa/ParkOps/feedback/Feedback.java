@@ -8,8 +8,9 @@ import jakarta.persistence.Id;
 @Entity
 public class Feedback {
     @Id
-            @GeneratedValue(strategy = GenerationType.SEQUENCE)
+            @GeneratedValue(strategy = GenerationType.IDENTITY)
     int feedback_id;
+
     int visitor_id,ride_id,rating;
     String comment;
 
